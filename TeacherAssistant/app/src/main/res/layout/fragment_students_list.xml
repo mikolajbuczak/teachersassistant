@@ -1,0 +1,105 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_students_list"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".view.fragment.StudentsList">
+
+    <ImageButton
+        android:id="@+id/BackButtonStudentsList"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/abc_vector_test"
+        android:contentDescription="@string/backButtonDescription"
+        android:background="#A8C6FA"
+        android:fontFamily="@font/bevietnam_regular"
+        android:insetLeft="0dp"
+        android:insetTop="0dp"
+        android:insetRight="0dp"
+        android:insetBottom="0dp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/studentsLabel"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="#75a9f9"
+        android:fontFamily="@font/bevietnam_regular"
+        android:gravity="center_vertical"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:text="@string/studentsLabel"
+        android:textColor="#FFFFFF"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/BackButtonStudentsList"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/studentsCourseName"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:fontFamily="@font/bevietnam_regular"
+        android:gravity="center_vertical"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:text="@string/defaultCourseName"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/studentsLabel" />
+
+
+    <Button
+        android:id="@+id/EditCourseButton"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="15dp"
+        android:backgroundTint="#A8C6FA"
+        android:fontFamily="@font/bevietnam_regular"
+        android:insetLeft="0dp"
+        android:insetTop="0dp"
+        android:insetRight="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/editButtonText"
+        android:textColor="#FFFFFF"
+        android:textSize="17sp"
+        app:cornerRadius="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/studentsCourseName" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/coursesListRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/AddStudentButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/EditCourseButton" />
+
+    <Button
+        android:id="@+id/AddStudentButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#A8C6FA"
+        android:insetLeft="0dp"
+        android:insetTop="0dp"
+        android:insetRight="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/addButtonText"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:cornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

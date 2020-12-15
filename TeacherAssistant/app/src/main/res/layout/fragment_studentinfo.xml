@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_studentInfo"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.fragment.StudentInfo">
+
+    <ImageButton
+        android:id="@+id/BackButtonStudentInfo"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/abc_vector_test"
+        android:contentDescription="@string/backButtonDescription"
+        android:background="#A8C6FA"
+        android:fontFamily="@font/bevietnam_regular"
+        android:insetLeft="0dp"
+        android:insetTop="0dp"
+        android:insetRight="0dp"
+        android:insetBottom="0dp"
+        android:textColor="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/studentInfoLabel"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="#75a9f9"
+        android:fontFamily="@font/bevietnam_regular"
+        android:gravity="center_vertical"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:text="@string/studentLabel"
+        android:textColor="#FFFFFF"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/BackButtonStudentInfo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/studentInfoStudentName"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="15dp"
+        android:fontFamily="@font/bevietnam_regular"
+        android:gravity="center_vertical"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:text="@string/defaultStudentName"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toStartOf="@+id/EditStudentButton"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/studentInfoLabel" />
+
+
+    <Button
+        android:id="@+id/EditStudentButton"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="15dp"
+        android:backgroundTint="#A8C6FA"
+        android:fontFamily="@font/bevietnam_regular"
+        android:insetLeft="0dp"
+        android:insetTop="0dp"
+        android:insetRight="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/editButtonText"
+        android:textColor="#FFFFFF"
+        android:textSize="17sp"
+        app:cornerRadius="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/studentInfoCourseName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/studentInfoLabel" />
+
+    <TextView
+        android:id="@+id/studentInfoCourseName"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:fontFamily="@font/bevietnam_regular"
+        android:gravity="center"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:text="@string/defaultCourseName"
+        android:textSize="26sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/studentInfoStudentName" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/gradesRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/AddGradeButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/studentInfoCourseName" />
+
+    <Button
+        android:id="@+id/AddGradeButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="#A8C6FA"
+        android:insetLeft="0dp"
+        android:insetTop="0dp"
+        android:insetRight="0dp"
+        android:insetBottom="0dp"
+        android:text="@string/addButtonText"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:cornerRadius="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

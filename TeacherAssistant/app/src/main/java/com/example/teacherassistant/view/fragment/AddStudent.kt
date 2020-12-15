@@ -1,0 +1,56 @@
+package com.example.teacherassistant.view.fragment
+
+import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
+import com.example.teacherassistant.R
+import com.example.teacherassistant.viewmodel.CoursesListViewModel
+import com.example.teacherassistant.viewmodel.StudentListViewModel
+import kotlinx.android.synthetic.main.fragment_add_student.*
+
+private const val ARG_PARAM1 = "param1"
+private const val ARG_PARAM2 = "param2"
+private  lateinit var viewmodel: StudentListViewModel
+
+class AddStudent : Fragment() {
+    private var param1: String? = null
+    private var param2: String? = null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        arguments?.let {
+            param1 = it.getString(ARG_PARAM1)
+            param2 = it.getString(ARG_PARAM2)
+        }
+    }
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?
+    ): View? {
+        viewmodel = ViewModelProvider(requireActivity()).get(StudentListViewModel::class.java)
+        return inflater.inflate(R.layout.fragment_add_student, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        BackButtonAddStudent.setOnClickListener { x -> x.findNavController().navigate(R.id.action_addStudent_to_studentsList) }
+        SaveButtonAddStudent.setOnClickListener { x ->
+            viewmodel.addStudent(addStudentName.text.toString())
+            x.findNavController().navigate(R.id.action_addStudent_to_studentsList) }
+    }
+
+    companion object {
+        @JvmStatic
+        fun newInstance(param1: String, param2: String) =
+            AddStudent().apply {
+                arguments = Bundle().apply {
+                    putString(ARG_PARAM1, param1)
+                    putString(ARG_PARAM2, param2)
+                }
+            }
+    }
+}
